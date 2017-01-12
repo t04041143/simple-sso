@@ -42,9 +42,7 @@ end
 
 -- 通过校验后，如果tokenObj存在，那么设定转发的头部信息
 if tokenObj then
-    ngx.log(0, 'tokeninfo >>>>' .. tokenObj .. '<<<<<');
     local uid = tokenObj['uid']
-    ngx.log(0, 'uid >>>>' .. uid .. '<<<<<');
     -- 重写uid供服务识别
     ngx.req.set_header("uid", uid)
 end
